@@ -27,11 +27,14 @@ namespace LivingDexOrganizer
                 return;
             }
 
-            List<Pokedex> lists = new()
+            List<string> files = Directory.GetFiles(".\\Dexes").OrderBy(f => f).ToList();
+
+            List<Pokedex> lists = new();
+
+            foreach (var file in files)
             {
-                new("./Paldea.txt"),
-                new("./Kitakami.txt")
-            };
+                lists.Add(new(file));
+            }
 
             LivingDex newDex = new(oldDex, lists);
 

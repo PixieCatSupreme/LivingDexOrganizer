@@ -79,6 +79,7 @@ floatzel-f
 wooper
 wooper-f
 wooper-paldea
+quagsire
 quagsire-f
 clodsire
 psyduck
@@ -331,6 +332,7 @@ teddiursa
 ursaring
 ursaring-f
 ursaluna
+NULL
 zangoose
 seviper
 swablu
