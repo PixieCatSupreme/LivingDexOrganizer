@@ -332,7 +332,7 @@ teddiursa
 ursaring
 ursaring-f
 ursaluna
-NULL
+ursaluna-bloodmoon
 zangoose
 seviper
 swablu
