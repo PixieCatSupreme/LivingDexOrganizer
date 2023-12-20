@@ -73,8 +73,10 @@ namespace LivingDexOrganizer.Pokemon
             return pokemon;
         }
 
-        private void CompareCaptured(ref List<Pokedex> dexes, List<Pokemon> existing)
+        private static void CompareCaptured(ref List<Pokedex> dexes, List<Pokemon> existing)
         {
+            Console.WriteLine($"Comparing existing mon.");
+
             foreach (Pokemon? existingMon in existing)
             {
                 if (existingMon == null)
@@ -102,6 +104,8 @@ namespace LivingDexOrganizer.Pokemon
             int pokeIndex = 0;
             int boxPage = 0;
 
+            Console.WriteLine($"Creationg boxes.");
+
             foreach (var dex in dexes)
             {
                 boxCount += dex.Pokemon.Count;
@@ -109,10 +113,14 @@ namespace LivingDexOrganizer.Pokemon
 
             boxCount = (int)Math.Ceiling((float)boxCount / BoxSize);
 
+            Console.WriteLine($"Living dex will have {boxCount} boxes.");
+
             for (int i = 0; i <= boxCount; i++)
             {
                 boxPage++;
                 Box box = new($"{dexes[dexIndex].Name} {boxPage}", false);
+
+                Console.WriteLine($"Adding box page {boxPage} of dex {dexes[dexIndex].Name}.");
 
                 for (int j = 0; j < BoxSize; j++)
                 {
@@ -123,6 +131,8 @@ namespace LivingDexOrganizer.Pokemon
                     }
 
                     box.Pokemon.Add(dexes[dexIndex].Pokemon[pokeIndex]);
+
+                    Console.WriteLine($"Adding pokemon {dexes[dexIndex].Pokemon[pokeIndex].Id} to page {boxPage}.");
 
                     pokeIndex++;
                 }
